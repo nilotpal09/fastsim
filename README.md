@@ -9,4 +9,4 @@ For evaluation
 ```
 python eval.py [config] [training_checkpoint]
 ```
-Samples can be downloaded from [here]() (zenodo link)
+Samples can be downloaded from [here](https://doi.org/10.5281/zenodo.7891569) (zenodo link)
