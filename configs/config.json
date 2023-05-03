@@ -1,0 +1,62 @@
+{
+    "name": "test0",
+
+    "model_type": "tspn",
+
+    "predict_set_size": true,
+
+    "reduce_ds_train": 291500,
+    "reduce_ds_val": 50000,
+    "reduce_ds_test": 399000,
+    "num_epochs": 1000, 
+    "learningrate": 5e-4,
+    "batchsize": 25,
+    "num_workers": 3,
+
+    "path_train": "train.root",
+    "path_valid": "val.root",
+    "path_test": "test.root",
+    
+    "loss_types_test": ["total_loss"],
+    "loss_types": ["total_loss","kin_loss","num_loss","pt_loss","eta_loss","phi_loss"],
+
+
+    "class_embedding_size": 4,
+
+    "embedding_model": {
+        "n_iter": 4,
+
+        "truth_inputsize": 7,
+        "truth_hidden_size": 100,
+        "truth_init_layers": [200, 150],
+
+        "truth_mpnn_layers": [150]
+    },
+
+    "output_model": {
+
+        "KQV_layers": [300,200,150,100,50],
+
+        "z_size": 50,
+
+        "max_particles": 14,
+
+        "num_slotattn": 3,
+
+        "set_size_embedding": 10,
+        "set_size_prediction_layers": [80,30],
+        "ptetaphi_prediction_layers": [100,70,30],
+        "class_prediction_layers": [30]
+
+    },
+
+    "var_transform": {
+        "particle_pt":     {"mean": 8.55208, "std": 1.08052},
+        "particle_eta":    {"mean": 0.01287, "std": 1.31389},
+        "particle_phi":    {"mean": -0.12281, "std": 2.09990},
+        "pflow_pt":        {"mean": 8.55208, "std": 1.08052},
+        "pflow_eta":       {"mean": 0.01287, "std": 1.31389},
+        "pflow_phi":       {"mean": -0.12281, "std": 2.09990}
+    }
+
+    }
